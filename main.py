@@ -47,8 +47,8 @@ class Card:
             return -1  # why do i return a negative number here?
 
     def display(self):
-        print(f"You have got {self.value} of {self.sign}")  # GREAT change to the print, love it
-        # BUT... if you run the code there's a small problem :P
+        print(f"You have got {self.value} of {self.sign}")  
+        # if you run the code there's a small problem :P
 
 
 class Player:
@@ -80,6 +80,7 @@ class Player:
                 current_sum += 10
             elif card.value == 'A':
                 current_sum += 11  # why do i ignore the 1?
+                aces_count += 1  #We have to add 1 to aces count for every ace we havefor it to go through the whie loop as much times as it's supposed to. 
 
         while current_sum > 21 and aces_count > 0:
             current_sum -= 10
@@ -141,18 +142,6 @@ def main():
     player_1.report_sum()
     dealer.report_sum()
 
-    # if players_sum <= 17:
-    #     print(f"Your sum is smaller than 17. (it's {players_sum})")
-    #     player_1.card_adder(card_ran)
-    #     player_1.owned_cards()
-    # elif dealers_sum <= 17:
-    #     print(f"The dealers sum is smaller than 17. (it's {dealers_sum})")
-    #     dealer.card_adder(card_ran)
-    #     dealer.owned_cards()
-    # elif players_sum <= 17 or dealers_sum and value == "A":
-    #     changed_value = value.replace('A', 1)
-    # else:
-    #     pass
 
     if players_sum > 21:  # again, great, clear and short prints
         print("OH no, your sum is bigger than 21 :(.\nYou lost")
