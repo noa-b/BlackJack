@@ -80,7 +80,7 @@ class Player:
                 current_sum += 10
             elif card.value == 'A':
                 current_sum += 11  # why do i ignore the 1?
-                aces_count += 1  #We have to add 1 to aces count for every ace we havefor it to go through the whie loop as much times as it's supposed to. 
+                aces_count += 1  # We have to add 1 to aces count for every ace we have for it to go through the while loop as much times as it's supposed to.
 
         while current_sum > 21 and aces_count > 0:
             current_sum -= 10
